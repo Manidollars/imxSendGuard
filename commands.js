@@ -52,7 +52,7 @@ var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, gene
 Office.onReady(function () {
   // If needed, Office.js is ready to be called.
 });
-var targetOrigin = "https://manidollars.github.io/IMX-Test-Modules";
+var targetOrigin = "https://manidollars.github.io/imxSendGuard";
 /**
  * Shows a notification when the add-in command is executed.
  * @param event
@@ -209,6 +209,46 @@ function onNewMessageComposeHandler(event) {
     }, _callee3, null, [[1, 4, 5, 6]]);
   }));
 }
+function onMessageComposeHandler(event) {
+  return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator().m(function _callee4() {
+    var mailItem, _t3;
+    return _regenerator().w(function (_context4) {
+      while (1) switch (_context4.p = _context4.n) {
+        case 0:
+          if (event) {
+            _context4.n = 1;
+            break;
+          }
+          return _context4.a(2);
+        case 1:
+          _context4.p = 1;
+          mailItem = Office.context.mailbox.item;
+          if (!(mailItem == null || mailItem.itemType !== Office.MailboxEnums.ItemType.Message)) {
+            _context4.n = 2;
+            break;
+          }
+          return _context4.a(2);
+        case 2:
+          _context4.n = 3;
+          return validateRecipientsAndUpdateUI(mailItem, true, true, true);
+        case 3:
+          _context4.n = 5;
+          break;
+        case 4:
+          _context4.p = 4;
+          _t3 = _context4.v;
+          console.error("Error during new message compose handling:", _t3);
+        case 5:
+          _context4.p = 5;
+          if (event && typeof event.completed === "function") {}
+          event.completed();
+          return _context4.f(5);
+        case 6:
+          return _context4.a(2);
+      }
+    }, _callee4, null, [[1, 4, 5, 6]]);
+  }));
+}
 function getRecipientsAsync(recipientField) {
   return new Promise(function (resolve, reject) {
     recipientField.getAsync(function (result) {
@@ -230,6 +270,7 @@ function hasInvalidDomain(recipients, allowedDomain) {
 Office.actions.associate("action", action);
 Office.actions.associate("onMessageRecipientsChangedHandler", onMessageRecipientsChangedHandler);
 Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+Office.actions.associate("OnMessageCompose", onMessageComposeHandler);
 // Expose functions explicitly to the Webpack window context for functional background executions
 window.action = action;
 window.onMessageRecipientsChangedHandler = onMessageRecipientsChangedHandler;
