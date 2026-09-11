@@ -124,7 +124,7 @@ function validateRecipientsAndUpdateUI(mailItem, checkTo, checkCc, checkBcc) {
           }
           isMobile = Office.context.diagnostics.platform === Office.PlatformType.Android || Office.context.diagnostics.platform === Office.PlatformType.iOS;
           notificationPayload = {
-            type: Office.MailboxEnums.ItemNotificationMessageType.ErrorMessage,
+            type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
             message: "Warning: Some or all recipients added to this message are external."
           }; // Android/iOS platforms enforce strict key validations and expect "none"
           if (isMobile) {
