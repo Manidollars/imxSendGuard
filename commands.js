@@ -69,7 +69,7 @@ function action(event) {
  */
 function validateRecipientsAndUpdateUI(mailItem, checkTo, checkCc, checkBcc) {
   return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator().m(function _callee() {
-    var targetDomain, hasExternalRecipient, toRecipients, ccRecipients, bccRecipients, isMobile, notificationPayload, _t;
+    var targetDomain, hasExternalRecipient, toRecipients, ccRecipients, bccRecipients, isAndroidMobile, isiOSMobile, isMobile, notificationPayload, _t;
     return _regenerator().w(function (_context) {
       while (1) switch (_context.p = _context.n) {
         case 0:
@@ -122,7 +122,11 @@ function validateRecipientsAndUpdateUI(mailItem, checkTo, checkCc, checkBcc) {
             _context.n = 9;
             break;
           }
-          isMobile = Office.context.diagnostics.platform === Office.PlatformType.Android || Office.context.diagnostics.platform === Office.PlatformType.iOS;
+          // const isMobile = Office.context.diagnostics.platform === Office.PlatformType.Android ||
+          //   Office.context.diagnostics.platform === Office.PlatformType.iOS;
+          isAndroidMobile = Office.context.diagnostics.platform === Office.PlatformType.Android || /Android/i.test(navigator.userAgent);
+          isiOSMobile = Office.context.diagnostics.platform === Office.PlatformType.iOS || /iPhone|iPad|iPod/i.test(navigator.userAgent);
+          isMobile = isAndroidMobile || isiOSMobile;
           notificationPayload = {
             type: Office.MailboxEnums.ItemNotificationMessageType.ErrorMessage,
             message: "Warning: Some or all recipients added to this message are external."
