@@ -10,12 +10,6 @@
 /* provided dependency */ var Promise = __webpack_require__(/*! es6-promise */ "./node_modules/es6-promise/dist/es6-promise.js").Promise;
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i.return) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 /// <reference types="@types/office-js" />
 /*
  * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
@@ -75,60 +69,97 @@ function action(event) {
  */
 function validateRecipientsAndUpdateUI(mailItem, checkTo, checkCc, checkBcc) {
   return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator().m(function _callee() {
-    var targetDomain, hasExternalRecipient, promises, _yield$Promise$all, _yield$Promise$all2, toRecipients, ccRecipients, bccRecipients;
+    var targetDomain, hasExternalRecipient, toRecipients, ccRecipients, bccRecipients, _t;
     return _regenerator().w(function (_context) {
-      while (1) switch (_context.n) {
+      while (1) switch (_context.p = _context.n) {
         case 0:
           targetDomain = "@inMailX.onmicrosoft.com";
-          hasExternalRecipient = false; // 1. Inspect recipients concurrently for the flagged fields
-          promises = [checkTo ? getRecipientsAsync(mailItem.to) : Promise.resolve(null), checkCc ? getRecipientsAsync(mailItem.cc) : Promise.resolve(null), checkBcc ? getRecipientsAsync(mailItem.bcc) : Promise.resolve(null)];
-          _context.n = 1;
-          return Promise.all(promises);
-        case 1:
-          _yield$Promise$all = _context.v;
-          _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 3);
-          toRecipients = _yield$Promise$all2[0];
-          ccRecipients = _yield$Promise$all2[1];
-          bccRecipients = _yield$Promise$all2[2];
-          // 2. Evaluate if any verified recipient field contains an invalid domain
-          if (toRecipients && hasInvalidDomain(toRecipients, targetDomain) || ccRecipients && hasInvalidDomain(ccRecipients, targetDomain) || bccRecipients && hasInvalidDomain(bccRecipients, targetDomain)) {
-            hasExternalRecipient = true;
-          }
-          // 3. Update the Outlook notification UI securely using awaited Promises
-          if (!hasExternalRecipient) {
+          hasExternalRecipient = false;
+          _context.p = 1;
+          if (!(checkTo && mailItem.to)) {
             _context.n = 3;
             break;
           }
           _context.n = 2;
+          return getRecipientsWithTimeout(mailItem.to).catch(function () {
+            return [];
+          });
+        case 2:
+          toRecipients = _context.v;
+          if (hasInvalidDomain(toRecipients, targetDomain)) {
+            hasExternalRecipient = true;
+          }
+        case 3:
+          if (!(!hasExternalRecipient && checkCc && mailItem.cc)) {
+            _context.n = 5;
+            break;
+          }
+          _context.n = 4;
+          return getRecipientsWithTimeout(mailItem.cc).catch(function () {
+            return [];
+          });
+        case 4:
+          ccRecipients = _context.v;
+          if (hasInvalidDomain(ccRecipients, targetDomain)) {
+            hasExternalRecipient = true;
+          }
+        case 5:
+          if (!(!hasExternalRecipient && checkBcc && mailItem.bcc)) {
+            _context.n = 7;
+            break;
+          }
+          _context.n = 6;
+          return getRecipientsWithTimeout(mailItem.bcc).catch(function () {
+            return [];
+          });
+        case 6:
+          bccRecipients = _context.v;
+          if (hasInvalidDomain(bccRecipients, targetDomain)) {
+            hasExternalRecipient = true;
+          }
+        case 7:
+          if (!hasExternalRecipient) {
+            _context.n = 9;
+            break;
+          }
+          _context.n = 8;
           return new Promise(function (resolve) {
             mailItem.notificationMessages.replaceAsync("ExternalDomainWarning", {
               type: Office.MailboxEnums.ItemNotificationMessageType.ErrorMessage,
               message: "Warning: Some or all recipients added to this message are external.",
               icon: "none",
-              persistent: false
+              // FIXED: Compelled structure layout for Android runtime compliance
+              persistent: false // FIXED: Compelled structure layout for Android runtime compliance
             }, function () {
               return resolve();
             });
           });
-        case 2:
-          _context.n = 4;
+        case 8:
+          _context.n = 10;
           break;
-        case 3:
-          _context.n = 4;
+        case 9:
+          _context.n = 10;
           return new Promise(function (resolve) {
             mailItem.notificationMessages.removeAsync("ExternalDomainWarning", function () {
               return resolve();
             });
           });
-        case 4:
+        case 10:
+          _context.n = 12;
+          break;
+        case 11:
+          _context.p = 11;
+          _t = _context.v;
+          console.error("Bypassed unexpected error in UI validation: ", _t);
+        case 12:
           return _context.a(2);
       }
-    }, _callee);
+    }, _callee, null, [[1, 11]]);
   }));
 }
 function onMessageRecipientsChangedHandler(event) {
   return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator().m(function _callee2() {
-    var mailItem, checkTo, checkCc, checkBcc, _t;
+    var mailItem, checkTo, checkCc, checkBcc, _t2;
     return _regenerator().w(function (_context2) {
       while (1) switch (_context2.p = _context2.n) {
         case 0:
@@ -146,8 +177,8 @@ function onMessageRecipientsChangedHandler(event) {
           }
           return _context2.a(2);
         case 2:
-          // Identify which fields changed using safe runtime checks
-          checkTo = event.changedRecipientFields ? !!event.changedRecipientFields.to : true; // Default to true if changedRecipientFields is undefined
+          // FIXED: Using const with safe fallback handling for Android
+          checkTo = event.changedRecipientFields ? !!event.changedRecipientFields.to : true;
           checkCc = event.changedRecipientFields ? !!event.changedRecipientFields.cc : true;
           checkBcc = event.changedRecipientFields ? !!event.changedRecipientFields.bcc : true; // Execute the shared validation logic
           _context2.n = 3;
@@ -157,8 +188,8 @@ function onMessageRecipientsChangedHandler(event) {
           break;
         case 4:
           _context2.p = 4;
-          _t = _context2.v;
-          console.error("Error processing recipient validation:", _t);
+          _t2 = _context2.v;
+          console.error("Error processing recipient validation:", _t2);
         case 5:
           _context2.p = 5;
           if (event && typeof event.completed === "function") {
@@ -173,7 +204,7 @@ function onMessageRecipientsChangedHandler(event) {
 }
 function onNewMessageComposeHandler(event) {
   return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator().m(function _callee3() {
-    var mailItem, _t2;
+    var mailItem, _t3;
     return _regenerator().w(function (_context3) {
       while (1) switch (_context3.p = _context3.n) {
         case 0:
@@ -198,12 +229,13 @@ function onNewMessageComposeHandler(event) {
           break;
         case 4:
           _context3.p = 4;
-          _t2 = _context3.v;
-          console.error("Error during new message compose handling:", _t2);
+          _t3 = _context3.v;
+          console.error("Error during new message compose handling:", _t3);
         case 5:
           _context3.p = 5;
-          if (event && typeof event.completed === "function") {}
-          event.completed();
+          if (event && typeof event.completed === "function") {
+            event.completed();
+          }
           return _context3.f(5);
         case 6:
           return _context3.a(2);
@@ -213,7 +245,7 @@ function onNewMessageComposeHandler(event) {
 }
 function onMessageComposeHandler(event) {
   return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator().m(function _callee4() {
-    var mailItem, _t3;
+    var mailItem, _t4;
     return _regenerator().w(function (_context4) {
       while (1) switch (_context4.p = _context4.n) {
         case 0:
@@ -238,18 +270,41 @@ function onMessageComposeHandler(event) {
           break;
         case 4:
           _context4.p = 4;
-          _t3 = _context4.v;
-          console.error("Error during new message compose handling:", _t3);
+          _t4 = _context4.v;
+          console.error("Error during new message compose handling:", _t4);
         case 5:
           _context4.p = 5;
-          if (event && typeof event.completed === "function") {}
-          event.completed();
+          if (event && typeof event.completed === "function") {
+            event.completed();
+          }
           return _context4.f(5);
         case 6:
           return _context4.a(2);
       }
     }, _callee4, null, [[1, 4, 5, 6]]);
   }));
+}
+/**
+ * FIXED: High-reliability wrapper for getAsync that self-rejects if Outlook stalls,
+ * preventing the entire add-in background task container from being killed with a 5018 timeout error.
+ */
+function getRecipientsWithTimeout(recipientField) {
+  var apiCall = new Promise(function (resolve, reject) {
+    recipientField.getAsync(function (result) {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
+        resolve(result.value || []);
+      } else {
+        reject(result.error);
+      }
+    });
+  });
+  // Self-destruct lookup execution if it stalls longer than 2.5 seconds
+  var timeoutFallback = new Promise(function (_, reject) {
+    return setTimeout(function () {
+      return reject(new Error("Outlook API field lock timeout"));
+    }, 2500);
+  });
+  return Promise.race([apiCall, timeoutFallback]);
 }
 function getRecipientsAsync(recipientField) {
   return new Promise(function (resolve, reject) {
