@@ -69,7 +69,7 @@ function action(event) {
  */
 function validateRecipientsAndUpdateUI(mailItem, checkTo, checkCc, checkBcc) {
   return __awaiter(this, void 0, void 0, /*#__PURE__*/_regenerator().m(function _callee() {
-    var targetDomain, hasExternalRecipient, toRecipients, ccRecipients, bccRecipients, _t;
+    var targetDomain, hasExternalRecipient, toRecipients, ccRecipients, bccRecipients, isMobile, notificationPayload, _t;
     return _regenerator().w(function (_context) {
       while (1) switch (_context.p = _context.n) {
         case 0:
@@ -122,17 +122,26 @@ function validateRecipientsAndUpdateUI(mailItem, checkTo, checkCc, checkBcc) {
             _context.n = 9;
             break;
           }
+          isMobile = Office.context.diagnostics.platform === Office.PlatformType.Android || Office.context.diagnostics.platform === Office.PlatformType.iOS;
+          notificationPayload = {
+            type: Office.MailboxEnums.ItemNotificationMessageType.ErrorMessage,
+            message: "Warning: Some or all recipients added to this message are external.",
+            persistent: false
+          }; // Android/iOS platforms enforce strict key validations and expect "none"
+          if (isMobile) {
+            notificationPayload.icon = "none";
+          }
           _context.n = 8;
           return new Promise(function (resolve) {
-            mailItem.notificationMessages.replaceAsync("ExternalDomainWarning", {
-              type: Office.MailboxEnums.ItemNotificationMessageType.ErrorMessage,
-              message: "Warning: Some or all recipients added to this message are external.",
-              icon: "none",
-              // FIXED: Compelled structure layout for Android runtime compliance
-              persistent: false // FIXED: Compelled structure layout for Android runtime compliance
-            }, function () {
+            mailItem.notificationMessages.replaceAsync("ExternalDomainWarning", notificationPayload, function () {
               return resolve();
             });
+            // mailItem.notificationMessages.replaceAsync("ExternalDomainWarning", {
+            //   type: Office.MailboxEnums.ItemNotificationMessageType.ErrorMessage,
+            //   message: "Warning: Some or all recipients added to this message are external.",
+            //   icon: "none",        // FIXED: Compelled structure layout for Android runtime compliance
+            //   persistent: false    // FIXED: Compelled structure layout for Android runtime compliance
+            // }, () => resolve());
           });
         case 8:
           _context.n = 10;
